@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue_OZERO</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+</head>
+
+<body>
+    <p>オセロ</p>
+    <div id="app">
+        <p>白:{{ w }}, 黒:{{ b }}</p>
+        <p>{{ ["白","黒"][wb] }}の手番</p>
+        <div v-for="i in 8" class="container">
+            <div v-for="j in 8" class="waku">
+                <div :class="{ 'white': bord[i][j]==0, 'black': bord[i][j]==1, 'empty': bord[i][j]==9 }"
+                 @click="setPiece(i, j)"></div>
+            </div>
+        </div>
+        <p>
+            <button @click="pass">pass</button>
+        </p>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
