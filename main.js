@@ -68,6 +68,7 @@ let vm = new Vue({
                 this.bord[x][y] = this.wb;
                 this.wb = 1 - this.wb;
             }
+            this.bord.push();
         },
         pass: function () {
             this.wb = 1 - this.wb;
